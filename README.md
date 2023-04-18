@@ -1,4 +1,4 @@
-# Ejercicio N°1 - Trabajo Práctico N°6
+# Ejercicio N°6 - Trabajo Práctico N°6
 En este trabajo práctico realizamos diferentes ejercicios para aprender algunos conceptos básicos del lenguaje JavaScript.
 Se resolvió haciendo uso de los conceptos aprendidos previamente en Trabajo Prácticos anteriores y se integraron nuevos conocimientos:
 * DOM "Document Object Model"
@@ -11,7 +11,7 @@ Dado que es requerimiento del Trabajo Práctico hacer un repositorio por cada ej
 ## Ejercicios JavaScript
 ### Prácticas con DOM y BOM
 -------------------
-#### Números Mágicos
+#### Temporizador
 
 6. Realizar una web con un **temporizador** donde el usuario **pueda ingresar un tiempo** desde donde comenzará a **decrementar el contador**. Debe contener los **botones, iniciar, pausar y reset**. 
 
