@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resolución del Trabajo Práctico N°5 sobre DOM y BOM - Ejercicio N°6" />
+    <meta
+      name="keywords"
+      content="ejercicios,programación,JavaScript,document object model,browser object model,DOM,BOM,trabajo práctico,RollingCode" />
+    <meta name="author" content="César Luciano Angeleri" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Trabajo Práctico N°5 - Ejercicio 6</title>
+  </head>
+
+  <body class="text-bg-dark">
+    <header>
+      <nav class="navbar navbar-expand-lg text-bg-warning">
+        <div class="container-fluid d-flex flex-column flex-md-row justify-content-md-center">
+          <a class="navbar-brand py-2" href="./index.html"><i class="bi bi-code-slash fs-1 p-3"></i>TP N°6 - Ejercicio 6</a>
+        </div>
+      </nav>
+      <h1 class="display-1 my-3 text-warning text-center">Temporizador</h1>
+    </header>
+    <main>
+      <section class="container">
+        <div class="accordion accordion-flush" id="acordionEnunciado">
+          <div class="accordion-item text-bg-dark">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed rounded-pill fs-2 px-4 text-bg-warning"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne">
+                Enunciado
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#acordionEnunciado">
+              <div class="accordion-body border border-warning rounded rounded-5">
+                <p class="fs-5">Realizar una web con un <strong>temporizador</strong> que tenga las opciones:</p>
+                <ul class="list-group fs-6">
+                  <li class="list-group-item list-group-item-dark">Se pueda ingresar un tiempo desde donde comenzará a decrementar el contador</li>
+                  <li class="list-group-item list-group-item-dark">Botón "Iniciar"</li>
+                  <li class="list-group-item list-group-item-dark">Botón "Reset"</li>
+                  <li class="list-group-item list-group-item-dark">Botón "Pausar"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="container flex-column my-3 px-3 py-3 px-md-5 py-md-5 bg-black bg-opacity-50 rounded-5">
+        <h3 class="fs-2 text-center pb-3 neon-texto">Temporizador</h3>
+        <form class="d-flex justify-content-between flex-column flex-md-row gap-1 gap-md-3">
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input type="number" class="form-control form-control-lg ps-4" id="inputHoras" placeholder="Ingrese las horas" required min="1">
+              <label class="ps-4" for="inputHoras">Horas</label>
+            </div>
+            <span class="input-group-text">Hs</span>
+          </div>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input type="number" class="form-control form-control-lg ps-4" id="inputMinutos" placeholder="Ingrese los minutos" required min="1" max="59">
+              <label class="ps-4" for="inputMinutos">Minutos</label>
+            </div>
+            <span class="input-group-text">Min</span>
+          </div>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input type="number" class="form-control form-control-lg ps-4" id="inputSegundos" placeholder="Ingrese los segundos" required min="1" max="59">
+              <label class="ps-4" for="inputSegundos">Segundos</label>
+            </div>
+            <span class="input-group-text">Seg</span>
+          </div>
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <input type="number" class="form-control form-control-lg ps-4" id="inputMilisegundos" placeholder="Ingrese los milisegundos" required min="1" max="999">
+              <label class="ps-4" for="inputMilisegundos">Milisegundos</label>
+            </div>
+            <span class="input-group-text">MS</span>
+          </div>
+        </form>
+        <div class="d-flex justify-content-between align-items-center gap-1 gap-md-2">
+          <h4 class="fs-3 text-warning rounded-4 bg-dark border border-warning-subtle py-3 px-md-3 w-100 neon" id="horas">
+            00<small class="fs-6 ps-1 d-none d-md-inline">hs</small>
+          </h4>
+          <span class="fs-3">:</span>
+          <h4 class="fs-3 text-warning rounded-4 bg-dark border border-warning-subtle py-3 px-md-3 w-100 neon" id="minutos">
+            00<small class="fs-6 ps-1 d-none d-md-inline">min</small>
+          </h4>
+          <span class="fs-3">:</span>
+          <h4 class="fs-3 rounded-4 text-warning bg-dark border border-warning-subtle py-3 px-md-3 w-100 neon" id="segundos">
+            00<small class="fs-6 ps-1 d-none d-md-inline">seg</small>
+          </h4>
+          <span class="fs-3">:</span>
+          <h4 class="fs-3 rounded-4 text-warning bg-dark border border-warning-subtle py-3 px-md-3 w-100 neon" id="milisegundos">
+            000<small class="fs-6 ps-1 d-none d-md-inline">mseg</small>
+          </h4>
+        </div>
+        <div class="mx-auto text-center pt-4">
+          <div class="btn-group" role="group">
+            <button type="button" id="btnReset" disabled class="btn btn-outline-secondary fs-2 d-block align-items-center">
+              <i class="bi bi-skip-start-btn px-3 fs-1"></i><span class="d-none d-md-block">Reset</span>
+            </button>
+            <button type="button" id="btnInicio" class="btn btn-outline-success fs-2 d-block align-items-center">
+              <i class="bi bi-play-btn px-3 fs-1"></i><span class="d-none d-md-block">Iniciar</span>
+            </button>
+            <button type="button" id="btnPausa" disabled class="btn btn-outline-secondary fs-2 d-block align-items-center">
+              <i class="bi bi-pause-btn px-3 fs-1"></i><span class="d-none d-md-block">Pausar</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="d-flex flex-column flex-md-row justify-content-between align-items-center p-md-5 px-2 py-4 my-5 border-top border-warning-subtle gap-3">
+      <span class="text-warning">© 2023 // César Luciano Angeleri</span>
+      <ul class="justify-content-end list-unstyled d-flex gap-3">
+        <li class="fs-1">
+          <a class="text-warning" href="https://github.com/LucianoAngeleri"><i class="bi bi-github"></i></a>
+        </li>
+        <li class="fs-1">
+          <a class="text-warning" href="https://www.linkedin.com/in/cesar-luciano-angeleri/"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

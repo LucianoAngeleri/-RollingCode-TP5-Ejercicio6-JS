@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+*{
+    font-family: 'Golos Text', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex-grow: 1;
+}
+h1{
+    text-shadow: 0 0 5rem rgba(0, 0, 0, 0.8);
+}
+.neon{ 
+    text-align: center;
+    box-shadow: 0 0 3.5rem -6px #ffbf005d,
+    inset 0 0 1rem -6px #f8cd4a6c;
+}
+.neon-texto{
+    text-shadow: 0 0 1.5rem #ffbf005d;
+}
+.form-control{
+    border-color: #ffe69c;
+    background-color:#212529;
+    color: white;
+    border-radius: 5rem;
+}
+.form-control:focus {
+    padding-left: 2rem;
+    color: white;
+    background-color:#212529;
+    border-color: #ffe69c;
+    outline: 0;
+    box-shadow: 0 0 0.5rem 0.1rem #ffe69c5b;
+}
+.form-control::placeholder {
+    color: #ffe69c;
+}
+.input-group-text{
+    color: #ffc107;
+    border-color: #ffe69c;
+    background-color:#212529;
+    border-bottom-right-radius: 5rem;
+    border-top-right-radius: 5rem;
+}
